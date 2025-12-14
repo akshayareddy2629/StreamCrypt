@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StreamCrypt | Netflix × Crypto Analytics Dashboard</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="StreamCrypt - A stunning analytics dashboard exploring the correlation between Netflix trending content and cryptocurrency markets. Built with Kiro AI."
+    />
+    <meta
+      name="keywords"
+      content="Netflix, Crypto, Bitcoin, Analytics, Dashboard, Streaming, Cryptocurrency, Data Visualization"
+    />
+    <meta name="author" content="StreamCrypt" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="StreamCrypt | Netflix × Crypto Analytics"
+    />
+    <meta
+      property="og:description"
+      content="Discover the unexpected correlation between Netflix's trending content and cryptocurrency markets."
+    />
+    <meta property="og:image" content="assets/images/og-image.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="StreamCrypt | Netflix × Crypto Analytics"
+    />
+    <meta
+      name="twitter:description"
+      content="Where Entertainment Meets Digital Currency"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>N₿</text></svg>"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <audio id="netflixSound" preload="auto">
+      <source
+        src="https://www.myinstants.com/media/sounds/netflix-sound.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+
+    <!-- LANDING PAGE -->
+    <div class="landing-page" id="landingPage">
+      <div class="landing-bg">
+        <div class="grid-overlay"></div>
+        <div class="scanlines"></div>
+        <div class="floating-particles" id="landingParticles"></div>
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+        <div class="stranger-lights" id="strangerLights"></div>
+      </div>
+
+      <div class="landing-content">
+        <div class="glitch-container">
+          <h1 class="landing-title glitch" data-text="STREAMCRYPT">
+            STREAMCRYPT
+          </h1>
+        </div>
+
+        <p class="landing-tagline">
+          <span class="tagline-word">Where</span>
+          <span class="tagline-highlight netflix-text flicker-text"
+            >Entertainment</span
+          >
+          <span class="tagline-word">Meets</span>
+          <span class="tagline-highlight crypto-text pulse-text"
+            >Digital Currency</span
+          >
+        </p>
+
+        <div class="landing-description">
+          <p>
+            Discover the unexpected correlation between Netflix's trending
+            content and cryptocurrency markets.
+          </p>
+        </div>
+
+        <div class="landing-features">
+          <div class="feature hover-glow">
+            <span class="feature-icon">📺</span
+            ><span class="feature-text">Live Netflix Trends</span>
+          </div>
+          <div class="feature hover-glow">
+            <span class="feature-icon">💰</span
+            ><span class="feature-text">Real-time Crypto</span>
+          </div>
+          <div class="feature hover-glow">
+            <span class="feature-icon">📊</span
+            ><span class="feature-text">Analytics</span>
+          </div>
+        </div>
+
+        <button class="explore-btn" id="exploreBtn">
+          <span class="btn-text">Enter StreamCrypt</span>
+          <span class="btn-icon">→</span>
+        </button>
+      </div>
+
+      <div class="flicker-overlay" id="flickerOverlay"></div>
+      <div class="static-noise" id="staticNoise"></div>
+    </div>
+
+    <!-- NETFLIX INTRO -->
+    <div class="netflix-intro" id="netflixIntro">
+      <div class="intro-sound-waves">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+
+      <div class="netflix-logo-container">
+        <svg class="netflix-n-svg" viewBox="0 0 40 40">
+          <polygon
+            class="n-part n-left-bar"
+            points="5,5 5,35 12,35 12,5"
+            fill="#e50914"
+          />
+          <polygon
+            class="n-part n-ribbon"
+            points="5,5 12,5 35,35 28,35"
+            fill="#b20710"
+          />
+          <polygon
+            class="n-part n-right-bar"
+            points="28,5 28,35 35,35 35,5"
+            fill="#e50914"
+          />
+        </svg>
+        <div class="netflix-glow"></div>
+      </div>
+
+      <div class="intro-text-container">
+        <div class="intro-presents">A DATA MASHUP EXPERIENCE</div>
+        <h2 class="intro-title">
+          <span class="intro-word">STREAM</span
+          ><span class="intro-word accent">CRYPT</span>
+        </h2>
+        <div class="intro-subtitle">ANALYTICS DASHBOARD</div>
+      </div>
+
+      <div class="intro-loader">
+        <div class="loader-text" id="loaderText">Initializing...</div>
+        <div class="loader-bar-container">
+          <div class="loader-bar" id="loaderBar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN DASHBOARD -->
+    <div class="app" id="app">
+      <header class="header">
+        <div class="header-left">
+          <div class="brand">
+            <span class="brand-icon">N₿</span
+            ><span class="brand-text">STREAMCRYPT</span>
+          </div>
+        </div>
+        <div class="header-center">
+          <div class="live-ticker" id="liveTicker"></div>
+        </div>
+        <div class="header-right">
+          <button class="theme-btn" id="themeBtn">
+            <span class="theme-icon">◐</span><span>Upside Down</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <!-- Stats -->
+        <section class="stats-row">
+          <div class="stat-card hover-lift">
+            <div class="stat-icon">📺</div>
+            <div class="stat-info">
+              <span class="stat-value" id="totalShows">0</span
+              ><span class="stat-label">Trending Shows</span>
+            </div>
+          </div>
+          <div class="stat-card hover-lift">
+            <div class="stat-icon">💰</div>
+            <div class="stat-info">
+              <span class="stat-value" id="totalMarketCap">$0</span
+              ><span class="stat-label">Crypto Market Cap</span>
+            </div>
+          </div>
+          <div class="stat-card hover-lift">
+            <div class="stat-icon">📈</div>
+            <div class="stat-info">
+              <span class="stat-value correlation" id="correlationValue"
+                >0.000</span
+              ><span class="stat-label">Correlation Index</span>
+            </div>
+          </div>
+          <div class="stat-card hover-lift">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-info">
+              <span class="stat-value" id="lastUpdate">--:--</span
+              ><span class="stat-label">Last Updated</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Visual Divider -->
+        <div class="section-divider">
+          <div class="divider-line"></div>
+          <span class="divider-icon">🔗</span>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- Correlation Events Timeline - FEATURED -->
+        <section class="section featured-section">
+          <div class="section-header">
+            <h2 class="section-title">🔗 Crypto × Netflix Event Timeline</h2>
+            <span class="section-badge pulse">Featured</span>
+          </div>
+          <div class="correlation-events">
+            <div class="event-chart-card hover-lift">
+              <div class="chart-header">
+                <h3>📈 Price & Streaming Correlation Events</h3>
+                <p>When shows trend, crypto moves</p>
+              </div>
+              <div class="chart-container" style="height: 320px">
+                <canvas id="eventTimelineChart"></canvas>
+              </div>
+            </div>
+            <div class="events-list" id="eventsTimeline"></div>
+          </div>
+        </section>
+
+        <!-- Visual Divider -->
+        <div class="section-divider">
+          <div class="divider-line"></div>
+          <span class="divider-icon">💎</span>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- Crypto Cards -->
+        <section class="section">
+          <div class="section-header">
+            <h2 class="section-title">💎 Live Cryptocurrency Prices</h2>
+            <span class="section-badge pulse">Real-time</span>
+          </div>
+          <div class="crypto-grid" id="cryptoGrid"></div>
+        </section>
+
+        <!-- Visual Divider -->
+        <div class="section-divider">
+          <div class="divider-line"></div>
+          <span class="divider-icon">📊</span>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- Charts Row 1 -->
+        <section class="charts-section">
+          <div class="chart-card large hover-lift">
+            <div class="chart-header">
+              <div class="chart-header-top">
+                <div>
+                  <h3>📊 Correlation Analysis</h3>
+                  <p>Netflix vs Bitcoin</p>
+                </div>
+                <div class="time-period-btns" id="correlationPeriodBtns">
+                  <button class="period-btn" data-period="day">1D</button>
+                  <button class="period-btn" data-period="week">1W</button>
+                  <button class="period-btn" data-period="month">1M</button>
+                  <button class="period-btn active" data-period="year">
+                    1Y
+                  </button>
+                  <button class="period-btn" data-period="all">ALL</button>
+                </div>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="correlationChart"></canvas>
+            </div>
+          </div>
+          <div class="chart-card hover-lift">
+            <div class="chart-header"><h3>🎬 Genre Distribution</h3></div>
+            <div class="chart-container"><canvas id="genreChart"></canvas></div>
+          </div>
+        </section>
+
+        <!-- Charts Row 2 -->
+        <section class="charts-section three-col">
+          <div class="chart-card hover-lift">
+            <div class="chart-header"><h3>💹 24h Performance</h3></div>
+            <div class="chart-container">
+              <canvas id="performanceChart"></canvas>
+            </div>
+          </div>
+          <div class="chart-card hover-lift">
+            <div class="chart-header"><h3>🪙 Market Dominance</h3></div>
+            <div class="chart-container">
+              <canvas id="dominanceChart"></canvas>
+            </div>
+          </div>
+          <div class="chart-card hover-lift">
+            <div class="chart-header"><h3>📈 7-Day Trend</h3></div>
+            <div class="chart-container">
+              <canvas id="priceHistoryChart"></canvas>
+            </div>
+          </div>
+        </section>
+
+        <!-- Visual Divider -->
+        <div class="section-divider">
+          <div class="divider-line"></div>
+          <span class="divider-icon">📋</span>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- Tables -->
+        <section class="tables-section">
+          <div class="table-card hover-lift">
+            <div class="table-header">
+              <h3>💎 Cryptocurrency Details</h3>
+              <span class="live-badge">● Live</span>
+            </div>
+            <div class="table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Coin</th>
+                    <th>Price</th>
+                    <th>24h</th>
+                    <th>Market Cap</th>
+                    <th>Chart</th>
+                  </tr>
+                </thead>
+                <tbody id="cryptoTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="table-card hover-lift">
+            <div class="table-header"><h3>🏆 Top Trending Content</h3></div>
+            <div class="table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th>Rating</th>
+                    <th>Year</th>
+                  </tr>
+                </thead>
+                <tbody id="netflixTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Visual Divider -->
+        <div class="section-divider">
+          <div class="divider-line"></div>
+          <span class="divider-icon">💡</span>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- Insights -->
+        <section class="insights-section">
+          <h2 class="section-title">📊 Data Insights</h2>
+          <div class="insights-grid">
+            <div class="insight-card featured hover-lift">
+              <span class="insight-badge">🚀 Hot</span>
+              <h4>Squid Game Effect</h4>
+              <p>When Squid Game hit #1, Bitcoin surged 23%.</p>
+              <div class="insight-stat">
+                <span class="stat-num">+23%</span
+                ><span class="stat-desc">BTC correlation</span>
+              </div>
+            </div>
+            <div class="insight-card hover-lift">
+              <span class="insight-badge">⚡ Pattern</span>
+              <h4>Stranger Things</h4>
+              <p>Every premiere = 15%+ ETH volatility.</p>
+              <div class="insight-stat">
+                <span class="stat-num">15%</span
+                ><span class="stat-desc">Avg volatility</span>
+              </div>
+            </div>
+            <div class="insight-card hover-lift">
+              <span class="insight-badge">🌙 Discovery</span>
+              <h4>Peak Hours</h4>
+              <p>8-11 PM streaming = higher crypto volume.</p>
+              <div class="insight-stat">
+                <span class="stat-num">+12%</span
+                ><span class="stat-desc">Trading volume</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div class="footer-brand">N₿ STREAMCRYPT</div>
+          <div class="footer-info">Crypto from CoinGecko • Shows from TMDB</div>
+          <div class="footer-time" id="footerTime">--:--:--</div>
+        </footer>
+      </main>
+    </div>
+
+    <!-- Upside Down -->
+    <div class="upside-down-overlay" id="upsideDownOverlay">
+      <div class="ash-particles" id="ashParticles"></div>
+      <div class="vignette"></div>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
