@@ -18,7 +18,7 @@ A stunning analytics dashboard exploring the unexpected correlation between Netf
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://yourusername.github.io/streamcrypt)
+[View Live Demo](https://akshayareddy2629.github.io/StreamCrypt/)
 
 ## 🛠️ Tech Stack
 
@@ -51,7 +51,7 @@ A stunning analytics dashboard exploring the unexpected correlation between Netf
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/streamcrypt.git
+git clone https://github.com/akshayareddy2629/StreamCrypt.git
 ```
 
 2. Open `index.html` in your browser or use a local server:
@@ -82,7 +82,7 @@ streamcrypt/
 2. Go to Settings → Pages
 3. Select "Deploy from a branch"
 4. Choose `main` branch and `/ (root)` folder
-5. Your site will be live at `https://yourusername.github.io/streamcrypt`
+5. Your site will be live at `https://akshayareddy2629.github.io/StreamCrypt/`
 
 ## 🤖 Built with Kiro AI
 
