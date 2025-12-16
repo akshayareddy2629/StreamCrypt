@@ -6,7 +6,7 @@ A stunning analytics dashboard exploring the unexpected correlation between Netf
 
 ## 🧾 Latest BLOG :
 
-[View the Latest Technical Blog ]([https://akshayareddy2629.github.io/StreamCrypt/](https://builder.aws.com/content/36pnPqy7yV0Qv5tBdnMuxiDHnHk/streamcrypt-where-entertainment-meets-digital-currency-made-easy-by-kiro))
+[View the Latest Technical Blog](https://builder.aws.com/content/36pnPqy7yV0Qv5tBdnMuxiDHnHk/streamcrypt-where-entertainment-meets-digital-currency-made-easy-by-kiro)
 
 ## 🌟 Features
 
@@ -20,7 +20,7 @@ A stunning analytics dashboard exploring the unexpected correlation between Netf
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://akshayareddy2629.github.io/StreamCrypt/)
+[Live Demo](https://akshayareddy2629.github.io/StreamCrypt/)
 
 ## 🛠️ Tech Stack
 
