@@ -4,7 +4,9 @@
 
 A stunning analytics dashboard exploring the unexpected correlation between Netflix trending content and cryptocurrency markets. Built with the power of **Kiro AI**.
 
-![StreamCrypt Dashboard](assets/images/preview.png)
+## 🧾 Latest BLOG :
+
+[View the Latest Technical Blog ]([https://akshayareddy2629.github.io/StreamCrypt/](https://builder.aws.com/content/36pnPqy7yV0Qv5tBdnMuxiDHnHk/streamcrypt-where-entertainment-meets-digital-currency-made-easy-by-kiro))
 
 ## 🌟 Features
 
